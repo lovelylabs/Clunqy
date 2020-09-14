@@ -16,6 +16,7 @@ export default class extends Component {
             .then((data) => this.setState({ data }))
     }
     render() {
+        console.log(this.state)
         return (
             <div className='App'>
                 <h1>Hello, World!</h1>
