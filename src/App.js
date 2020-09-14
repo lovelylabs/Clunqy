@@ -2,6 +2,20 @@ import React, { Component } from 'react'
 import './App.css'
 
 export default class extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            resume: null,
+        }
+    }
+
+    componentDidMount() {
+        console.log('The  component  mounted')
+        fetch('https://lovelylabs.herokuapp.com/resume').then((response) => {
+            console.log(response.json())
+            return response.json()
+        })
+    }
     render() {
         return (
             <div className='App'>
