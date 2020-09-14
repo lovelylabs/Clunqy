@@ -11,10 +11,9 @@ export default class extends Component {
 
     componentDidMount() {
         console.log('The  component  mounted')
-        fetch('https://lovelylabs.herokuapp.com/resume').then((response) => {
-            console.log(response.json())
-            return response.json()
-        })
+        fetch('https://lovelylabs.herokuapp.com/resume')
+            .then((response) => response.json())
+            .then((data) => this.setState({ data }))
     }
     render() {
         return (
